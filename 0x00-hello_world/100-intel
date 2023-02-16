@@ -1,2 +1,2 @@
 #!/bin/bash
-CFILE="$1" && OUTFILE="${CFILE%.c}.s" && gcc -S -masm=intel "$CFILE" -o "$OUTFILE"
+gcc -S -masm=intel $CFILE > 0-main.s
