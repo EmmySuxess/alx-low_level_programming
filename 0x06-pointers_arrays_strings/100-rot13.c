@@ -21,6 +21,16 @@ if (str[i] == rot13[j])
 encoded[i] = rot13[(j + 13) % 52];
 break;
 }
+else if ((str[i] >= 'A' && str[i] < 'N') || (str[i] >= 'a' && str[i] < 'n'))
+{
+encoded[i] = str[i] + 13;
+break;
+}
+else if ((str[i] >= 'N' && str[i] <= 'Z') || (str[i] >= 'n' && str[i] <= 'z'))
+{
+encoded[i] = str[i] - 13;
+break;
+}
 }
 }
 
