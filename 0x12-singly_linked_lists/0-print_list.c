@@ -3,7 +3,7 @@
 
 /**
  * print_list - prints list
- * @h - param list
+ * @h: param list
  * Return: struct
  */
 
