@@ -7,10 +7,13 @@
  *
  * Return: pointer to the new node or null if it fails
  *
- * Description: add a node int at the beginning of a listint_t list
+ * Description: This function creates a new node with the data 'n' and adds it
+ * to the beginning of the linked list pointed to by 'head'.
+ * If memory allocation fails, the function returns NULL.
+ * The function returns a pointer to the new node or NULL if it fails.
+ * If the list is empty, the new node becomes the head node.
  *
  */
-
 listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint_t *new;
