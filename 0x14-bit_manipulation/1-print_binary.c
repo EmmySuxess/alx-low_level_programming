@@ -8,30 +8,27 @@
 
 void print_binary(unsigned long int n)
 {
-int i, mask;
+	int i;
+	int count = 0;
+	unsigned long int cur;
 
-/* Print binary representation in base 2 */
-for (i = (sizeof(unsigned long int) * 8) - 1; i >= 0; i--)
-{
-mask = 1 << i;
-printf("%d", (n & mask) ? 1 : 0);
-}
+	for (i = 63; i >= 0; i--)
+	{
+		cur = n >> i;
 
-printf(" ");
+		if (cur & 1)
+		{
+			_putchar('1');
+			count++;
+		}
+		else if (count)
+		{
+			_putchar('0');
+		}
+	}
 
-/* Print binary representation in base 8 */
-for (i = (sizeof(unsigned long int) * 8) - 1; i >= 0; i -= 3)
-{
-mask = 7 << i;
-printf("%o",(unsigned int)((n & mask) >> i));
-}
-
-printf(" ");
-
-/* Print binary representation in base 16 */
-for (i = (sizeof(unsigned long int) * 8) - 4; i >= 0; i -= 4)
-{
-mask = 15 << i;
-printf("%X", (unsigned int)((n & mask) >> i));
-}
+	if (!count)
+	{
+		_putchar('0');
+	}
 }
