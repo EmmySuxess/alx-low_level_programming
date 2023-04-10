@@ -9,29 +9,32 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int total, power;
-	int len;
-
+	unsigned int r = 0;
+	unsigned int x = 1;
+	int i = 0;
+		
 	if (b == NULL)
 	{
 		return (0);
 	}
 
-	for (len = 0; b[len]; len++)
+	for ( i = 0; b[i] != '\0'; i++)
 	{
-		if (b[len] != '0' && b[len] != '1')
+		if (b[i] == '0')
+		{
+			/*return ('0');*/
+		}
+		else if (b[i] == '1')
+		{
+			r += x;
+		}
+		else
 		{
 			return (0);
 		}
+
+		x <<= 1;
 	}
 
-	for (power = 1, total = 0, len--; len >= 0; len--, power *= 2)
-	{
-		if (b[len] == '1')
-		{
-			total += power;
-		}
-	}
-
-	return (0);
+	return (r);
 }
