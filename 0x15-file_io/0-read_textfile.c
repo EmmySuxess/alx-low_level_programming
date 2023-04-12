@@ -2,13 +2,14 @@
 #include <stdlib.h>
 
 /**
- * read_file_and_print - Reads a file and prints its contents to stdout
+ * read_textfile - Reads a file and prints its contents to stdout
  * @file_path: The path of the file to read
  * @num_bytes: The number of bytes to read from the file 
- * Return: The actual number of bytes read and printed to stdout, or 0 if the function fails.
+ * Return: The actual number of bytes read and printed
+ * to stdout, or 0 if the function fails.
  */
 
-ssize_t read_file_and_print(const char *file_path, size_t num_bytes)
+ssize_t read_textfile(const char *file_path, size_t num_bytes)
 {
     char *buffer;
     ssize_t file_descriptor;
